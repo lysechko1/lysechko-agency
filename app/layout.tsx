@@ -5,6 +5,7 @@ import Script from "next/script"
 import { ChatProvider } from "@/components/chat/ChatProvider"
 import ChatButton from "@/components/chat/ChatButton"
 import ChatStatus from "@/components/chat/ChatStatus"
+import ChatLoader from "@/components/chat/ChatLoader"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -51,6 +52,7 @@ export default function RootLayout({
           </div>
           <ChatButton />
           <ChatStatus />
+          <ChatLoader />
         </ChatProvider>
       </body>
     </html>

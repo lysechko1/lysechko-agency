@@ -149,6 +149,7 @@ const translations: Record<Language, Record<string, string>> = {
     liveChat: "Live Chat",
     chatOpen: "Chat Open",
     chatAvailable: "Chat Available",
+    loadingChat: "Loading Chat",
 
     // Footer
     footerTagline: "Performance-driven marketing since 2017",
@@ -626,6 +627,7 @@ const translations: Record<Language, Record<string, string>> = {
     liveChat: "Живой чат",
     chatOpen: "Чат открыт",
     chatAvailable: "Чат доступен",
+    loadingChat: "Загрузка чата",
 
     // Footer
     footerTagline: "Маркетинг, ориентированный на результат, с 2017 года",
