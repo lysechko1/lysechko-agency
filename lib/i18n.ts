@@ -147,6 +147,8 @@ const translations: Record<Language, Record<string, string>> = {
     whatsapp: "WhatsApp",
     telegram: "Telegram",
     liveChat: "Live Chat",
+    chatOpen: "Chat Open",
+    chatAvailable: "Chat Available",
 
     // Footer
     footerTagline: "Performance-driven marketing since 2017",
@@ -622,6 +624,8 @@ const translations: Record<Language, Record<string, string>> = {
     whatsapp: "WhatsApp",
     telegram: "Telegram",
     liveChat: "Живой чат",
+    chatOpen: "Чат открыт",
+    chatAvailable: "Чат доступен",
 
     // Footer
     footerTagline: "Маркетинг, ориентированный на результат, с 2017 года",
