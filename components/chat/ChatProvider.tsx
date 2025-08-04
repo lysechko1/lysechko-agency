@@ -25,6 +25,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         // Проверяем, не загружены ли уже файлы
         if (document.querySelector('link[href*="chat_widget.css"]')) {
           console.log('Chat CSS already loaded')
+          console.log('Loading chat CSS from:', `${baseUrl}/chat_widget.css`)
         } else {
           // Загружаем CSS
           const link = document.createElement('link')
@@ -36,6 +37,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         // Проверяем, не загружен ли уже JS
         if (document.querySelector('script[src*="chat_widget.js"]')) {
           console.log('Chat JS already loaded')
+          console.log('Loading chat JS from:', `${baseUrl}/chat_widget.js`)
         } else {
           // Загружаем JS
           const script = document.createElement('script')
