@@ -8,8 +8,6 @@ export default function ChatButton() {
   const { isLoaded, isOpen, openChat } = useChat()
   const { t } = useTranslation()
 
-  if (!isLoaded) return null
-
   return (
     <button
       onClick={openChat}

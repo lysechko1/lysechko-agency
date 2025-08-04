@@ -15,7 +15,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     // Проверяем, не загружен ли уже чат
     if (window.ChatWidgetLoaded) return
 
-    // Ленивая загрузка чата
+    // Загружаем чат сразу при монтировании
     const loadChat = async () => {
       try {
         // Определяем протокол для совместимости с HTTPS
@@ -67,20 +67,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       }
     }
 
-    // Загружаем чат только при первом взаимодействии
-    const handleUserInteraction = () => {
-      loadChat()
-      document.removeEventListener('click', handleUserInteraction)
-      document.removeEventListener('scroll', handleUserInteraction)
-    }
-
-    document.addEventListener('click', handleUserInteraction)
-    document.addEventListener('scroll', handleUserInteraction)
-
-    return () => {
-      document.removeEventListener('click', handleUserInteraction)
-      document.removeEventListener('scroll', handleUserInteraction)
-    }
+    // Загружаем чат сразу
+    loadChat()
   }, [language])
 
   const openChat = () => {

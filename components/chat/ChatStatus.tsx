@@ -7,8 +7,6 @@ export default function ChatStatus() {
   const { isLoaded, isOpen } = useChat()
   const { t } = useTranslation()
 
-  if (!isLoaded) return null
-
   return (
     <div className="fixed bottom-20 right-4 z-40 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg md:bottom-24 md:right-6">
       <span className="flex items-center gap-2">
