@@ -23,31 +23,33 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         const baseUrl = `${protocol}//46.202.155.177:8080`
 
         // Проверяем, не загружены ли уже файлы
-        if (document.querySelector('link[href*="chat_widget.css"]')) {
+        if (document.querySelector('link[href*="modern_chat_widget.css"]')) {
           console.log('Chat CSS already loaded')
-          console.log('Loading chat CSS from:', `${baseUrl}/chat_widget.css`)
+          console.log('Loading chat CSS from:', `${baseUrl}/modern_chat_widget.css`)
         } else {
           // Загружаем CSS
           const link = document.createElement('link')
           link.rel = 'stylesheet'
-          link.href = `${baseUrl}/chat_widget.css`
+          link.href = `${baseUrl}/modern_chat_widget.css`
           document.head.appendChild(link)
         }
 
         // Проверяем, не загружен ли уже JS
-        if (document.querySelector('script[src*="chat_widget.js"]')) {
+        if (document.querySelector('script[src*="modern_chat_widget.js"]')) {
           console.log('Chat JS already loaded')
-          console.log('Loading chat JS from:', `${baseUrl}/chat_widget.js`)
+          console.log('Loading chat JS from:', `${baseUrl}/modern_chat_widget.js`)
         } else {
           // Загружаем JS
           const script = document.createElement('script')
-          script.src = `${baseUrl}/chat_widget.js`
+          script.src = `${baseUrl}/modern_chat_widget.js`
           script.onload = () => {
             setIsLoaded(true)
             window.ChatWidgetLoaded = true
             
             // Инициализируем чат согласно мануалу
-            if (window.ChatWidget) {
+            if (window.ModernChatWidget) {
+              new window.ModernChatWidget()
+            } else if (window.ChatWidget) {
               new window.ChatWidget()
             } else if (window.initChat) {
               // Fallback для старого API

@@ -5,6 +5,7 @@ declare global {
     closeChat?: () => void
     sendChatMessage?: (message: string) => void
     ChatWidget?: new () => any
+    ModernChatWidget?: new (options?: any) => any
     ChatWidgetLoaded?: boolean
   }
 }
