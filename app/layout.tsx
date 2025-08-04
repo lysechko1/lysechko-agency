@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import { ChatProvider } from "@/components/chat/ChatProvider"
 import ChatButton from "@/components/chat/ChatButton"
+import ChatMobileButton from "@/components/chat/ChatMobileButton"
 import ChatStatus from "@/components/chat/ChatStatus"
 import ChatLoader from "@/components/chat/ChatLoader"
 import "./globals.css"
@@ -51,6 +52,7 @@ export default function RootLayout({
             {children}
           </div>
           <ChatButton />
+          <ChatMobileButton />
           <ChatStatus />
           <ChatLoader />
         </ChatProvider>

@@ -12,26 +12,48 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   const { language } = useTranslation()
 
   useEffect(() => {
+    // Проверяем, не загружен ли уже чат
+    if (window.ChatWidgetLoaded) return
+
     // Ленивая загрузка чата
     const loadChat = async () => {
       try {
-        // Загружаем CSS
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = 'http://46.202.155.177:8080/chat_widget.css'
-        document.head.appendChild(link)
+        // Определяем протокол для совместимости с HTTPS
+        const protocol = window.location.protocol === 'https:' ? 'https:' : 'http:'
+        const baseUrl = `${protocol}//46.202.155.177:8080`
 
-        // Загружаем JS
-        const script = document.createElement('script')
-        script.src = 'http://46.202.155.177:8080/chat_widget.js'
-        script.onload = () => {
-          setIsLoaded(true)
-          // Инициализируем чат с языком
-          if (window.initChat) {
-            window.initChat({ language })
-          }
+        // Проверяем, не загружены ли уже файлы
+        if (document.querySelector('link[href*="chat_widget.css"]')) {
+          console.log('Chat CSS already loaded')
+        } else {
+          // Загружаем CSS
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = `${baseUrl}/chat_widget.css`
+          document.head.appendChild(link)
         }
-        document.body.appendChild(script)
+
+        // Проверяем, не загружен ли уже JS
+        if (document.querySelector('script[src*="chat_widget.js"]')) {
+          console.log('Chat JS already loaded')
+        } else {
+          // Загружаем JS
+          const script = document.createElement('script')
+          script.src = `${baseUrl}/chat_widget.js`
+          script.onload = () => {
+            setIsLoaded(true)
+            window.ChatWidgetLoaded = true
+            
+            // Инициализируем чат согласно мануалу
+            if (window.ChatWidget) {
+              new window.ChatWidget({ language })
+            } else if (window.initChat) {
+              // Fallback для старого API
+              window.initChat({ language })
+            }
+          }
+          document.body.appendChild(script)
+        }
 
         // Отправляем событие в GTM
         if (window.dataLayer) {
