@@ -46,7 +46,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
             
             // Инициализируем чат согласно мануалу
             if (window.ChatWidget) {
-              new window.ChatWidget({ language })
+              new window.ChatWidget()
             } else if (window.initChat) {
               // Fallback для старого API
               window.initChat({ language })

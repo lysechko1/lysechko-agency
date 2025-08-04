@@ -4,7 +4,9 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import { ChatProvider } from "@/components/chat/ChatProvider"
 import ChatButton from "@/components/chat/ChatButton"
+import ChatMobileButton from "@/components/chat/ChatMobileButton"
 import ChatStatus from "@/components/chat/ChatStatus"
+import ChatWidget from "@/components/chat/ChatWidget"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -50,7 +52,9 @@ export default function RootLayout({
             {children}
           </div>
           <ChatButton />
+          <ChatMobileButton />
           <ChatStatus />
+          <ChatWidget />
         </ChatProvider>
       </body>
     </html>

@@ -4,7 +4,7 @@ declare global {
     openChat?: () => void
     closeChat?: () => void
     sendChatMessage?: (message: string) => void
-    ChatWidget?: new (config?: { language?: string }) => any
+    ChatWidget?: new () => any
     ChatWidgetLoaded?: boolean
   }
 }
