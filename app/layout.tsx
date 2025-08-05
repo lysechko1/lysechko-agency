@@ -32,8 +32,6 @@ export default function RootLayout({
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K5VKJKK2');`,
           }}
         />
-        {/* Чат-виджет CSS */}
-        <link rel="stylesheet" href="https://chat.lysechko-webdesign.com.ua/chat_widget.css" />
       </head>
       <body className={`${inter.className} overflow-x-hidden`}>
         {/* Google Tag Manager (noscript) */}
@@ -49,17 +47,6 @@ export default function RootLayout({
           {children}
         </div>
         <ChatWidget />
-        {/* Чат-виджет JavaScript */}
-        <Script
-          id="chat-widget-script"
-          src="https://chat.lysechko-webdesign.com.ua/chat_widget.js"
-          strategy="afterInteractive"
-          onLoad={() => {
-            if (typeof window !== 'undefined' && typeof (window as any).ChatWidget !== 'undefined') {
-              new (window as any).ChatWidget();
-            }
-          }}
-        />
       </body>
     </html>
   )
