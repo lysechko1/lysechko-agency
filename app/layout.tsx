@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
-import UltimateChatButton from "@/components/UltimateChatButton"
+import StartDuckChatWidget from "@/components/StartDuckChatWidget"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -46,7 +46,7 @@ export default function RootLayout({
         <div className="min-h-screen w-full overflow-x-hidden">
           {children}
         </div>
-        <UltimateChatButton />
+        <StartDuckChatWidget />
       </body>
     </html>
   )
