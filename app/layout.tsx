@@ -2,10 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Script from "next/script"
-import { ChatProvider } from "@/components/chat/ChatProvider"
-import ChatButton from "@/components/chat/ChatButton"
-import ChatMobileButton from "@/components/chat/ChatMobileButton"
-import ChatStatus from "@/components/chat/ChatStatus"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -46,14 +42,9 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <ChatProvider>
-          <div className="min-h-screen w-full overflow-x-hidden">
-            {children}
-          </div>
-          <ChatButton />
-          <ChatMobileButton />
-          <ChatStatus />
-        </ChatProvider>
+        <div className="min-h-screen w-full overflow-x-hidden">
+          {children}
+        </div>
       </body>
     </html>
   )

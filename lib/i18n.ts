@@ -54,8 +54,7 @@ const translations: Record<Language, Record<string, string>> = {
     smmPrDesc: "Building brand presence and reputation through strategic social media and public relations.",
     seo: "SEO",
     seoDesc: "Search engine optimization that improves rankings and increases organic traffic.",
-    aiChatbots: "AI Chatbots",
-    aiChatbotsDesc: "Intelligent automation that handles customer inquiries and improves user experience.",
+
     aso: "ASO",
     asoDesc: "App store optimization that increases visibility and downloads for mobile applications.",
     crmIntegrations: "CRM Integrations",
@@ -101,7 +100,7 @@ const translations: Record<Language, Record<string, string>> = {
     aiCrmTitle: "AI Agents and CRM: Automate Your Sales",
     aiCrmDescription:
       "We help implement bots, auto-replies, CRM syncing to streamline your entire sales process and maximize conversion rates.",
-    aiChatbotsFeature: "AI Chatbots",
+
     automation: "Automation",
     autoReplies: "Auto-Replies",
     crmSync: "CRM Sync",
@@ -136,7 +135,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Contact Form
     contactTitle: "Leave a Request — We'll Reach Out",
-    contactSubtitle: "Or message us via WhatsApp, Telegram, or live chat",
+    contactSubtitle: "Or message us via WhatsApp or Telegram",
     name: "Name",
     namePlaceholder: "Your full name",
     phone: "Phone",
@@ -146,10 +145,7 @@ const translations: Record<Language, Record<string, string>> = {
     sendRequest: "Send Request",
     whatsapp: "WhatsApp",
     telegram: "Telegram",
-    liveChat: "Live Chat",
-    chatOpen: "Chat Open",
-    chatAvailable: "Chat Available",
-    loadingChat: "Loading Chat",
+
 
     // Footer
     footerTagline: "Performance-driven marketing since 2017",
@@ -531,9 +527,7 @@ const translations: Record<Language, Record<string, string>> = {
     smmPrDesc: "Создание присутствия бренда и репутации через стратегический SMM и PR.",
     seo: "SEO",
     seoDesc: "Поисковая оптимизация, которая улучшает позиции и увеличивает органический трафик.",
-    aiChatbots: "AI чат-боты",
-    aiChatbotsDesc:
-      "Интеллектуальная автоматизация, которая обрабатывает запросы клиентов и улучшает пользовательский опыт.",
+
     aso: "ASO",
     asoDesc: "Оптимизация в App Store, которая увеличивает видимость и загрузки мобильных приложений.",
     crmIntegrations: "CRM интеграции",
@@ -579,7 +573,7 @@ const translations: Record<Language, Record<string, string>> = {
     aiCrmTitle: "AI агенты и CRM: автоматизируйте продажи",
     aiCrmDescription:
       "Мы помогаем внедрить боты, автоответы, синхронизацию CRM для оптимизации всего процесса продаж и максимизации конверсии.",
-    aiChatbotsFeature: "AI чат-боты",
+
     automation: "Автоматизация",
     autoReplies: "Автоответы",
     crmSync: "Синхронизация CRM",
@@ -614,7 +608,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Contact Form
     contactTitle: "Оставьте заявку — мы свяжемся",
-    contactSubtitle: "Или напишите нам в WhatsApp, Telegram или живой чат",
+    contactSubtitle: "Или напишите нам в WhatsApp или Telegram",
     name: "Имя",
     namePlaceholder: "Ваше полное имя",
     phone: "Телефон",
@@ -624,10 +618,7 @@ const translations: Record<Language, Record<string, string>> = {
     sendRequest: "Отправить заявку",
     whatsapp: "WhatsApp",
     telegram: "Telegram",
-    liveChat: "Живой чат",
-    chatOpen: "Чат открыт",
-    chatAvailable: "Чат доступен",
-    loadingChat: "Загрузка чата",
+
 
     // Footer
     footerTagline: "Маркетинг, ориентированный на результат, с 2017 года",

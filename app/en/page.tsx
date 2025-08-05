@@ -39,7 +39,6 @@ import {
   IrrelevantLeadsIcon,
   BudgetWasteIcon,
   TriedBeforeIcon,
-  ChatbotIcon,
   AutomationIcon,
   AutoRepliesIcon,
   CRMSyncIcon,
@@ -108,11 +107,7 @@ export default function HomePage() {
       title: t("seo"),
       description: t("seoDesc"),
     },
-    {
-      icon: <Bot className="w-8 h-8" />,
-      title: t("aiChatbots"),
-      description: t("aiChatbotsDesc"),
-    },
+
     {
       icon: <Target className="w-8 h-8" />,
       title: t("aso"),
@@ -715,16 +710,11 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 <div className="text-center space-y-3 sm:space-y-4">
                   <div className="flex justify-center">
-                    <ChatbotIcon size={40} className="text-blue-400" />
-                  </div>
-                  <h3 className="font-semibold text-sm sm:text-base">{t("aiChatbotsFeature")}</h3>
-                </div>
-                <div className="text-center space-y-3 sm:space-y-4">
-                  <div className="flex justify-center">
-                    <AutomationIcon size={40} className="text-green-400" />
+                    <AutomationIcon size={40} className="text-blue-400" />
                   </div>
                   <h3 className="font-semibold text-sm sm:text-base">{t("automation")}</h3>
                 </div>
+
                 <div className="text-center space-y-3 sm:space-y-4">
                   <div className="flex justify-center">
                     <AutoRepliesIcon size={40} className="text-purple-400" />
