@@ -112,6 +112,40 @@ const OriginalChatWidget: React.FC = () => {
       document.body.insertAdjacentHTML('beforeend', chatWidgetHTML);
     };
 
+    const initializeChatHandlers = () => {
+      const chatButton = document.getElementById('chat-button');
+      const chatWindow = document.getElementById('chat-window');
+      const closeChat = document.getElementById('close-chat');
+      const minimizeChat = document.getElementById('minimize-chat');
+      const minimizedChat = document.getElementById('minimized-chat');
+      const restoreChat = document.getElementById('restore-chat');
+
+      if (chatButton && chatWindow) {
+        // Показать окно чата при клике на кнопку
+        chatButton.addEventListener('click', () => {
+          chatWindow.classList.remove('hidden');
+          minimizedChat?.classList.add('hidden');
+        });
+
+        // Закрыть окно чата
+        closeChat?.addEventListener('click', () => {
+          chatWindow.classList.add('hidden');
+        });
+
+        // Свернуть окно чата
+        minimizeChat?.addEventListener('click', () => {
+          chatWindow.classList.add('hidden');
+          minimizedChat?.classList.remove('hidden');
+        });
+
+        // Развернуть окно чата
+        restoreChat?.addEventListener('click', () => {
+          minimizedChat?.classList.add('hidden');
+          chatWindow.classList.remove('hidden');
+        });
+      }
+    };
+
     const loadChat = async () => {
       // Загружаем CSS
       if (!document.querySelector('link[href*="modern_chat_widget.css"]')) {
@@ -123,6 +157,11 @@ const OriginalChatWidget: React.FC = () => {
 
       // Создаем HTML структуру
       createChatHTML();
+
+      // Инициализируем обработчики событий
+      setTimeout(() => {
+        initializeChatHandlers();
+      }, 100);
 
       // Загружаем JavaScript
       if (!document.querySelector('script[src*="modern_chat_widget.js"]')) {
